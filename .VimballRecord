@@ -1,0 +1,2 @@
+snippy_plugin.vba: call delete('/home/joao.codagnoni/.vim/plugin/snippetsEmu.vim')|call delete('/home/joao.codagnoni/.vim/doc/snippets_emu.txt')
+xmledit.vba: call delete('/home/joao.codagnoni/.vim/ftplugin/xml.vim')|call delete('/home/joao.codagnoni/.vim/doc/xml-plugin.txt')
