@@ -1,6 +1,10 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Sets Pathogen
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 " Sets how many lines of history VIM has to remember
 set history=300
 
