@@ -86,11 +86,11 @@ if has("gui_running")
   colorscheme wombat
   set nu
 else
-  set background=light
+  set background=dark
   set t_Co=256
   set nu
   set mouse=a
-  colorscheme wombat
+  colorscheme default
 endif
 
 set encoding=utf8
@@ -385,6 +385,7 @@ if filereadable("/linuxppc/SELF/build/application/cscope.out")
 endif
 set csverb
 
+nmap <F12> :!dmscope<CR>:cs reset<CR><CR>
 
 """"""""""""""""""""""""
 " ShowMarks
@@ -476,7 +477,7 @@ au FileType python set expandtab
 """"""""""""""""""""""""""""""
 " => JavaScript section
 """""""""""""""""""""""""""""""
-au FileType javascript call JavaScriptFold()
+"" au FileType javascript call JavaScriptFold()
 au FileType javascript setl fen
 au FileType javascript setl nocindent
 
@@ -554,5 +555,10 @@ au BufNewFile,BufRead *.t2t set ft=txt2tags
 "endfunction
 "
 
+"""""""""""""""""""""""""""""""
+" => Code comment/uncomment
+"""""""""""""""""""""""""""""""
+vmap <F10> :s/^/\/\//<CR>:noh<CR><CR>
+vmap <F11> :s/^\/\///<CR>:noh<CR><CR>
 
 
