@@ -75,7 +75,7 @@ set t_vb=
 syntax enable "Enable syntax hl
 
 " Set font according to my taste
-set gfn=Monaco\ 11
+set gfn=Inconsolata\ 11
 set shell=/bin/bash
 
 if has("gui_running")
@@ -375,16 +375,6 @@ highlight MBEVisibleNormal term=bold cterm=bold gui=bold guibg=Black guifg=Green
 highlight MBEVisibleChanged term=bold cterm=bold gui=bold guibg=Black guifg=DarkRed
 
 
-"""""""""""""""""""""""""
-" CScope
-"""""""""""""""""""""""""
-set cscopetag
-set nocsverb
-if filereadable("/linuxppc/SELF/build/application/cscope.out")
-   cs add /linuxppc/SELF/build/application/cscope.out
-endif
-set csverb
-
 nmap <F12> :!dmscope<CR>:cs reset<CR><CR>
 
 """"""""""""""""""""""""
@@ -562,3 +552,63 @@ vmap <F10> :s/^/\/\//<CR>:noh<CR><CR>
 vmap <F11> :s/^\/\///<CR>:noh<CR><CR>
 
 
+"""""""""""""""""""""""""""""""""
+" => Clang-Format plugin
+"""""""""""""""""""""""""""""""""
+let g:clang_format#style_options = {
+            \ "BasedOnStyle": "Google",
+            \ "AccessModifierOffset": -1,
+            \ "ConstructorInitializerIndentWidth": 4,
+            \ "AlignEscapedNewlinesLeft": "true",
+            \ "AlignTrailingComments": "true",
+            \ "AllowAllParametersOfDeclarationOnNextLine": "true",
+            \ "AllowShortIfStatementsOnASingleLine": "false",
+            \ "AllowShortLoopsOnASingleLine": "false",
+            \ "AllowShortFunctionsOnASingleLine": "false",
+            \ "AlwaysBreakTemplateDeclarations": "true",
+            \ "AlwaysBreakBeforeMultilineStrings": "true",
+            \ "BreakBeforeBinaryOperators": "true",
+            \ "BreakBeforeTernaryOperators": "true",
+            \ "BreakConstructorInitializersBeforeComma": "false",
+            \ "BinPackParameters": "true",
+            \ "ColumnLimit": 100,
+            \ "ConstructorInitializerAllOnOneLineOrOnePerLine": "true",
+            \ "DerivePointerBinding": "true",
+            \ "ExperimentalAutoDetectBinPacking": "false",
+            \ "IndentCaseLabels": "true",
+            \ "MaxEmptyLinesToKeep": 1,
+            \ "NamespaceIndentation": "None",
+            \ "ObjCSpaceAfterProperty": "false",
+            \ "ObjCSpaceBeforeProtocolList": "false",
+            \ "PenaltyBreakBeforeFirstCallParameter": 1,
+            \ "PenaltyBreakComment": 300,
+            \ "PenaltyBreakString": 1000,
+            \ "PenaltyBreakFirstLessLess": 120,
+            \ "PenaltyExcessCharacter": 1000000,
+            \ "PenaltyReturnTypeOnItsOwnLine": 200,
+            \ "PointerBindsToType": "true",
+            \ "SpacesBeforeTrailingComments": 2,
+            \ "Cpp11BracedListStyle": "false",
+            \ "Standard": "Auto",
+            \ "IndentWidth": 4,
+            \ "TabWidth": 8,
+            \ "UseTab": "Never",
+            \ "BreakBeforeBraces": "Stroustrup",
+            \ "IndentFunctionDeclarationAfterType": "true",
+            \ "SpacesInParentheses": "false",
+            \ "SpacesInAngles": "false",
+            \ "SpaceInEmptyParentheses": "false",
+            \ "SpacesInCStyleCastParentheses": "false",
+            \ "SpacesInContainerLiterals": "true",
+            \ "SpaceBeforeAssignmentOperators": "true",
+            \ "ContinuationIndentWidth": 4,
+            \ "CommentPragmas": "'^ IWYU pragma:'",
+            \ "SpaceBeforeParens": "ControlStatements"}
+
+" map to <Leader>cf in C++ code
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" if you install vim-operator-user
+autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
+" Toggle auto formatting:
+nmap <Leader>C :ClangFormatAutoToggle<CR>
