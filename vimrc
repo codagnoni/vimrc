@@ -31,6 +31,9 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 
 nmap ; :
 
+
+set clipboard=unnamed
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -75,22 +78,23 @@ set t_vb=
 syntax enable "Enable syntax hl
 
 " Set font according to my taste
-set gfn=Inconsolata\ 11
+set gfn=Inconsolata\ 10
 set shell=/bin/bash
 
+  set background=dark
 if has("gui_running")
   set guioptions-=T
   set background=dark
   set t_Co=256
   set background=dark
-  colorscheme wombat
+  colorscheme dracula
   set nu
 else
   set background=dark
   set t_Co=256
   set nu
   set mouse=a
-  colorscheme default
+  colorscheme dracula
 endif
 
 set encoding=utf8
@@ -221,7 +225,7 @@ map <C-l> <C-W>l
 map <leader>bd :Bclose<cr>
 
 " Close all the buffers
-map <leader>ba :1,300 bd!<cr>
+map <leader>ba :1,30 bd!<cr>
 
 " Tab configuration
 map <leader>tn :tabnew %<cr>
