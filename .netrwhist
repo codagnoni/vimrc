@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/joao.codagnoni/datacom/pd2300/pd2350-sw/vtss_appl/mpls_tp/html'
 let g:netrw_dirhist_2='/home/joao.codagnoni/datacom/pd2300/pd2350-sw/vtss_appl/mpls_tp/html/help'
 let g:netrw_dirhist_3='/home/joao.codagnoni/datacom/pd2300/pd2350-sw/vtss_appl/mpls_tp/html'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/etc/nginx/sites-enabled'
 let g:netrw_dirhist_6='/home/joao.codagnoni/.oh-my-zsh/plugins/screen'
 let g:netrw_dirhist_7='/home/joao.codagnoni/.oh-my-zsh/plugins'
 let g:netrw_dirhist_8='/home/joao.codagnoni/.oh-my-zsh'
+let g:netrw_dirhist_9='/home/joao.codagnoni/.vim'
