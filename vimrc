@@ -5,7 +5,7 @@ source ~/.vim/vundle.vim
 filetype plugin indent on
 
 " Platform (Windows, Mac, etc.) configuration.
-"source ~/.vim/platforms.vim
+source ~/.vim/platforms.vim
 
 " All of the Vim configuration.
 source ~/.vim/config.vim
@@ -18,9 +18,8 @@ source ~/.vim/mappings.vim
 " Load plugin-specific configuration.
 source ~/.vim/plugins.vim
 
-
-
 " Small custom functions.
-"source ~/.vim/functions.vim
+source ~/.vim/functions.vim
+
 " Auto commands.
 "source ~/.vim/autocmds.vim
