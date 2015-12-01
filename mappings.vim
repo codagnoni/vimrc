@@ -65,13 +65,27 @@ nnoremap <silent> * :let stay_star_view = winsaveview()<cr>*:call winrestview(st
 " ---------------
 " Window Movement
 " ---------------
-nnoremap <silent> gh :WriteBufferIfNecessary<CR>:wincmd h<CR>
-nnoremap <silent> <M-h> :wincmd h<CR>
-nnoremap <silent> gj :WriteBufferIfNecessary<CR>:wincmd j<CR>
-nnoremap <silent> gk :WriteBufferIfNecessary<CR>:wincmd k<CR>
-nnoremap <silent> <M-k> :wincmd k<CR>
-nnoremap <silent> gl :WriteBufferIfNecessary<CR>:wincmd l<CR>
-nnoremap <silent> <M-l> :wincmd l<CR>
+
+" Smart way to move btw. windows
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
+
+" Close the current buffer
+nnoremap <leader>bd :Bclose<cr>
+
+" Close all the buffers
+nnoremap <leader>ba :1,30 bd!<cr>
+
+" Tab configuration
+nnoremap <leader>tn :tabnew %<cr>
+nnoremap <leader>te :tabedit
+nnoremap <leader>tc :tabclose<cr>
+nnoremap <leader>tm :tabmove
+
+" When pressing <leader>cd switch to the directory of the open buffer
+nnoremap <leader>cd :cd %:p:h<cr>
 
 "   4 Window Splits
 "
@@ -204,3 +218,6 @@ if has('mac') || has('gui_macvim') || has('gui_mac')
   nnoremap <silent> <leader>yd :let
   @*=expand("%:p:h")<CR>
 endif
+
+
+nmap <F12> :!dmscope<CR>:cs reset<CR><CR>
