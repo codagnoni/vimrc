@@ -80,9 +80,9 @@ set switchbuf=useopen  " Switch to an existing buffer if one exists
 " ---------------
 " Text Format
 " ---------------
-set tabstop=2
+set tabstop=4
 set backspace=indent,eol,start " Delete everything with backspace
-set shiftwidth=2 " Tabs under smart indent
+set shiftwidth=4 " Tabs under smart indent
 set shiftround
 set cindent
 set autoindent
@@ -111,12 +111,12 @@ set list
 " Reset the listchars
 set listchars=""
 " make tabs visible
-set listchars=tab:▸▸
+" set listchars=tab:▸▸
 " show trailing spaces as dots
-set listchars+=trail:•
+" set listchars+=trail:•
 " The character to show in the last column when wrap is off and the line
 " continues beyond the right of the screen
-set listchars+=extends:>
+set listchars=extends:>
 " The character to show in the last column when wrap is off and the line
 " continues beyond the right of the screen
 set listchars+=precedes:<
