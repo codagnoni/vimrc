@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/joao.codagnoni/datacom/pd2300/pd2350-sw/vtss_appl/mpls_tp/html'
-let g:netrw_dirhist_2='/home/joao.codagnoni/datacom/pd2300/pd2350-sw/vtss_appl/mpls_tp/html/help'
-let g:netrw_dirhist_3='/home/joao.codagnoni/datacom/pd2300/pd2350-sw/vtss_appl/mpls_tp/html'
-let g:netrw_dirhist_4='/home/joao.codagnoni/datacom/pd2300/pd2350-sw/vtss_appl/mpls_tp'
-let g:netrw_dirhist_5='/etc/nginx/sites-enabled'

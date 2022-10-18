@@ -1,4 +1,4 @@
 vimrc
 =====
 
-My vim configuration
+My (neo)vim lua configuration
