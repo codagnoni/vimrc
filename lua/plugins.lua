@@ -50,8 +50,14 @@ packer.startup(function(use)
     use 'lewis6991/gitsigns.nvim'
     use 'dinhhuy258/git.nvim' -- For git blame & browse
 
-    use 'scrooloose/nerdcommenter' -- Comments
     use { -- Show signature help when typing
         'ray-x/lsp_signature.nvim',
     }
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+}
 end)
